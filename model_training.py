@@ -7,7 +7,7 @@ import pickle
 from preprocess import clean_text
 
 # Load dataset
-data = pd.read_csv("sample_toxic_dataset.csv")  # must exist in same folder
+data = pd.read_csv('toxic_dataset_5000.csv')  # Ensure this CSV has 'comment_text' and 'toxic' columns
 
 # Preprocess comments
 data['clean_comment'] = data['comment_text'].apply(clean_text)
