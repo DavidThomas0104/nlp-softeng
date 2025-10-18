@@ -1,5 +1,5 @@
 #create virtual env
-python -m venv venv
+py -m venv venv
 venv\Scripts\activate
 #install dependencies 
 pip install pandas numpy scikit-learn nltk gradio
