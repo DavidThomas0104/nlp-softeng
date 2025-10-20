@@ -3,6 +3,8 @@ py -m venv venv
 venv\Scripts\activate
 #install dependencies 
 pip install pandas numpy scikit-learn nltk gradio
+pip install torch
+
 #first time nltk setup
 python 
 >> import nltk
@@ -14,3 +16,4 @@ python model_training.py
 python predict.py
 #launch web app
 python app.py
+
