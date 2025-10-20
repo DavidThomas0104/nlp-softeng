@@ -51,6 +51,19 @@ test_labels = data['toxic'][4000:]
 train_dataset = ToxicDataset(train_texts, train_labels, tokenizer)
 test_dataset = ToxicDataset(test_texts, test_labels, tokenizer)
 
+
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+    print(f"✅ Using GPU: {torch.cuda.get_device_name(0)}")
+elif torch.backends.mps.is_available():
+    device = torch.device("mps")  # for Apple Silicon (M1/M2)
+    print("🍎 Using Apple MPS accelerator")
+else:
+    device = torch.device("cpu")
+    print("⚠️ No GPU found. Using CPU — training will be slower.")
+
+model.to(device)
+
 # -----------------------------
 # 5️⃣ Training arguments
 # -----------------------------
